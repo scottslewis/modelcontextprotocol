@@ -2614,23 +2614,41 @@
             ],
             "type": "object"
         },
+        "ToolGroupName": {
+            "properties": {
+                "segmentName": {
+                    "description": "An identifier for a segment of an optionally-hierarchical name",
+                    "type": string
+                },
+                "parentName": {
+                    "description": "An optional parent toolgroupname segment",
+                    "$ref": "#/definitions/ToolGroupName"
+                }
+            },
+            "required": [
+                "segmentName"
+            ],
+            "type": "object"
+        }.
         "ToolGroup": {
-            "name": {
-                "$ref": "#/definitions/ToolGroupName",
-                "description": "required toolgroup name."
-            },
-            "description": {
-                "description": "A human-readable description of the toolgroup.\n\nThis can be used by clients to improve the LLM's understanding of available toolgroups. It can be thought of like a \"hint\" to the model.",
-                "type": "string"
-            },
-            "title": {
-                "description": "A human-readable title for this toolgroup",
-                "type": "string"
-            },
-            "_meta": {
-                "additionalProperties": {},
-                "description": "See [General fields: `_meta`](/specification/draft/basic/index#meta) for notes on `_meta` usage.",
-                "type": "object"
+            "properties": {
+                "name": {
+                    "description": "required ToolGroupName object instance",
+                    "$ref": "#/definitions/ToolGroupName"
+                },
+                "description": {
+                    "description": "A human-readable description of the toolgroup.\n\nThis can be used by clients to improve the LLM's understanding of available toolgroups. It can be thought of like a \"hint\" to the model.",
+                    "type": "string"
+                },
+                "title": {
+                    "description": "A human-readable title for this toolgroup",
+                    "type": "string"
+                },
+                "_meta": {
+                    "additionalProperties": {},
+                    "description": "See [General fields: `_meta`](/specification/draft/basic/index#meta) for notes on `_meta` usage.",
+                    "type": "object"
+                }
             },
             "required": [
                 "name"
@@ -2640,6 +2658,10 @@
         "Tool": {
             "description": "Definition for a tool the client can call.",
             "properties": {
+                "group": {
+                    "description": "An optional ToolGroup that this Tool is a member of",
+                    "$ref": "#/definitions/ToolGroup"
+                },
                 "_meta": {
                     "additionalProperties": {},
                     "description": "See [General fields: `_meta`](/specification/draft/basic/index#meta) for notes on `_meta` usage.",

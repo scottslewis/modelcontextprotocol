@@ -2614,30 +2614,14 @@
             ],
             "type": "object"
         },
-        "ToolGroupName": {
-            "properties": {
-                "segmentName": {
-                    "description": "An identifier for a segment of an optionally-hierarchical name",
-                    "type": "string"
-                },
-                "parentName": {
-                    "description": "An optional parent toolgroupname segment",
-                    "$ref": "#/definitions/ToolGroupName"
-                }
-            },
-            "required": [
-                "segmentName"
-            ],
-            "type": "object"
-        },
         "ToolGroup": {
             "properties": {
                 "name": {
                     "description": "required ToolGroupName object instance",
-                    "$ref": "#/definitions/ToolGroupName"
+                    "type": "string"
                 },
                 "description": {
-                    "description": "A human-readable description of the toolgroup.\n\nThis can be used by clients to improve the LLM's understanding of available toolgroups. It can be thought of like a \"hint\" to the model.",
+                    "description": "A description of the toolgroup intended for model usage/consumption.\n\nThis can be used by clients to improve the LLM's understanding of available toolgroups. It can be thought of like a \"hint\" to the model.",
                     "type": "string"
                 },
                 "title": {

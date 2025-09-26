@@ -2629,7 +2629,7 @@
                 "segmentName"
             ],
             "type": "object"
-        }.
+        },
         "ToolGroup": {
             "properties": {
                 "name": {

@@ -2617,8 +2617,12 @@
         "ToolGroup": {
             "properties": {
                 "name": {
-                    "description": "required ToolGroupName object instance",
+                    "description": "required name",
                     "type": "string"
+                },
+                "parent": {
+                    "$ref": "#/definitions/ToolGroup",
+                    "description": "Optional parent ToolGroup"
                 },
                 "description": {
                     "description": "A description of the toolgroup intended for model usage/consumption.\n\nThis can be used by clients to improve the LLM's understanding of available toolgroups. It can be thought of like a \"hint\" to the model.",

@@ -2614,22 +2614,22 @@
             ],
             "type": "object"
         },
-        "ToolGroup": {
+        "Group": {
             "properties": {
                 "name": {
                     "description": "required name",
                     "type": "string"
                 },
                 "parent": {
-                    "$ref": "#/definitions/ToolGroup",
-                    "description": "Optional parent ToolGroup"
+                    "$ref": "#/definitions/Group",
+                    "description": "Optional parent Group"
                 },
                 "description": {
-                    "description": "A description of the toolgroup intended for model usage/consumption.\n\nThis can be used by clients to improve the LLM's understanding of available toolgroups. It can be thought of like a \"hint\" to the model.",
+                    "description": "A description of the group intended for model usage/consumption.\n\nThis can be used by clients to improve the LLM's understanding of available toolgroups. It can be thought of like a \"hint\" to the model.",
                     "type": "string"
                 },
                 "title": {
-                    "description": "A human-readable title for this toolgroup",
+                    "description": "A human-readable title for this group",
                     "type": "string"
                 },
                 "_meta": {
@@ -2647,8 +2647,8 @@
             "description": "Definition for a tool the client can call.",
             "properties": {
                 "group": {
-                    "description": "An optional ToolGroup that this Tool is a member of",
-                    "$ref": "#/definitions/ToolGroup"
+                    "description": "An optional Group that this Tool is a member of",
+                    "$ref": "#/definitions/Group"
                 },
                 "_meta": {
                     "additionalProperties": {},

@@ -1755,6 +1755,10 @@
                     },
                     "type": "array"
                 },
+                "group": {
+                    "description": "An optional Group that this Tool is a member of",
+                    "$ref": "#/definitions/Group"
+                },
                 "description": {
                     "description": "An optional description of what this prompt provides",
                     "type": "string"

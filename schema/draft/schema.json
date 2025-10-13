@@ -1755,9 +1755,11 @@
                     },
                     "type": "array"
                 },
-                "group": {
-                    "description": "An optional Group that this Tool is a member of",
-                    "$ref": "#/definitions/Group"
+                "groups": {
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    },
+                    "type": "array"
                 },
                 "description": {
                     "description": "An optional description of what this prompt provides",
@@ -2005,6 +2007,12 @@
                     "description": "Intended for programmatic or logical use, but used as a display name in past specs or fallback (if title isn't present).",
                     "type": "string"
                 },
+                "groups": {
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    },
+                    "type": "array"
+                },
                 "size": {
                     "description": "The size of the raw resource content, in bytes (i.e., before base64 encoding or any tokenization), if known.\n\nThis can be used by Hosts to display file sizes and estimate context window usage.",
                     "type": "integer"
@@ -2156,6 +2164,12 @@
                 "name": {
                     "description": "Intended for programmatic or logical use, but used as a display name in past specs or fallback (if title isn't present).",
                     "type": "string"
+                },
+                "groups": {
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    },
+                    "type": "array"
                 },
                 "title": {
                     "description": "Intended for UI and end-user contexts — optimized to be human-readable and easily understood,\neven by those unfamiliar with domain-specific terminology.\n\nIf not provided, the name should be used for display (except for Tool,\nwhere `annotations.title` should be given precedence over using `name`,\nif present).",
@@ -2650,9 +2664,11 @@
         "Tool": {
             "description": "Definition for a tool the client can call.",
             "properties": {
-                "group": {
-                    "description": "An optional Group that this Tool is a member of",
-                    "$ref": "#/definitions/Group"
+                "groups": {
+                    "items": {
+                        "$ref": "#/definitions/Group"
+                    },
+                    "type": "array"
                 },
                 "_meta": {
                     "additionalProperties": {},

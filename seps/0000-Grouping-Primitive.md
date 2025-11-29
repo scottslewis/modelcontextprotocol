@@ -63,7 +63,7 @@ This is the proposed schema addition for a new primitive named Group
     ],
     "type": "object"
 }
-``
+```
 Some of the documentation has been removed for clarity.  [Here is the complete addition 
 to the current draft/schema.json](https://github.com/scottslewis/modelcontextprotocol/blob/groups/schema/draft/schema.json#L3618)
 

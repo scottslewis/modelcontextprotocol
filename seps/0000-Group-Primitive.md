@@ -60,14 +60,14 @@ The json 'description' for each property for clarity.  [Here is the complete add
 to the current draft/schema.json](https://github.com/scottslewis/modelcontextprotocol/blob/groups/schema/draft/schema.json#L3618)
 
 ### Group Properties
-```
-	Property Name		Type		Required		Notes
-	
-	name				string		yes				Unique identifier for the group
-	parent				Group		no				See specification below
-	description      string		no				Same as for TPRs
-	title				string		no				Optional human-readable name of the group for display purposes.
-	_meta				object		no				Same as for other TPRs
+
+| Property Name			| Type			| Required		|Notes								|
+|:----------------------|:--------------|:--------------|:----------------------------------|
+| name					| string		| yes			| Unique identifier for the group|
+| parent				| Group			| no			| See specification below|
+| description      		| string		| no			| Same as for TPRs|
+| title					| string		| no			| Optional human-readable name of the group for display purposes|
+| _meta					| object		|no				|Same as for other TPRs
 ```
 
 ### Group.name property

@@ -65,7 +65,7 @@ to the current draft/schema.json](https://github.com/scottslewis/modelcontextpro
 	
 	name				string		yes				Unique identifier for the group
 	parent				Group		no				See specification below
-	description		string		no				Same as for TPRs
+	description      string		no				Same as for TPRs
 	title				string		no				Optional human-readable name of the group for display purposes.
 	_meta				object		no				Same as for other TPRs
 ```

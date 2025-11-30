@@ -143,14 +143,12 @@ the other primitives.  For example, adding an optional 'groups' property to the 
 
 ```json
 	"Tool": {
-# properties deleted for brevity
+// properties deleted for brevity
                 "name": {
                     "type": "string"
                 },
-properties deleted for brevity
-# properties deleted for brevity
-#               List of groups may be specified identifying the Groups that
-#               this Tool is *in*
+//               List of groups may be specified identifying the Groups that
+//               this Tool is *in*
                 "groups": {
                     "items": {
                         "$ref": "#/defs/Group"

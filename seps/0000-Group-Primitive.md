@@ -62,7 +62,7 @@ to the current draft/schema.json](https://github.com/scottslewis/modelcontextpro
 ### Group Properties
 
 | Property Name			| Type			| Required		|Notes								|
-|:----------------------|:--------------|:--------------|:----------------------------------|
+|:---------------------:|:-------------:|:-------------:|:---------------------------------:|
 | name					| string		| yes			| Unique identifier for the group|
 | parent				| Group			| no			| See specification below|
 | description      		| string		| no			| Same as for TPRs|

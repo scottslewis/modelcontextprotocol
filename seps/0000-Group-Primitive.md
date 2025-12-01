@@ -62,7 +62,7 @@ to the current draft/schema.json](https://github.com/scottslewis/modelcontextpro
 | Property Name			| Type			| Required		|Notes								|
 |:---------------------:|:-------------:|:-------------:|:---------------------------------:|
 | name					| string		| yes			| Unique identifier for the group|
-| parent				| Group			| no			| See specification below|
+| parent				| Group			| no			| See Group.parent section below|
 | description      		| string		| no			| Same as for TPRs|
 | title					| string		| no			| Optional human-readable name of the group for display purposes|
 | _meta					| object		|no				|Same as for other TPRs
@@ -71,15 +71,27 @@ to the current draft/schema.json](https://github.com/scottslewis/modelcontextpro
 ### Group.name property
 
 The Group.name property should be assumed to have the same syntax and uniqueness requirements
- as specified by the [Tool.name property](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#tool-names). Group.name is the only required property.
+ as specified by the [Tool.name property](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#tool-names). Group.name is the only required property in the Group schema definition.
  
-As Groups represent collections of Tools, Prompts, and/or Resources, it's possible for the Group.name to be used by servers and clients to introduce a 'fully-qualified' name (for TPRGs).
-This makes Groups an (optional) mechanism to introduce namespaces.
+As Groups represent collections of Tools, Prompts, and/or Resources, the presence of the Group.parent property (see below), along with a hierarchy of Groups makes it possible for TPRGs be made unique via 'fully-qualified' name (i.e. the Group hierarchy names, combined with the TPR name).  See the
+examples under Group.parent property below for examples.
+
+Note: This allows but does not require the usage of pre-existing or new namespaces as Group.names.
  
 ### Group.parent property
 
+NOTE: The Group.parent property could be eliminated from this proposal completely, or its
+introduction could deferred to a subsequent proposal. It was included here because the notion
+of grouping/collections are very often associated with hierarchy (and namespaces)...e.g.
+file systems (directories) or class namespaces. An alternative approach could be to leave out the optional Group.parent property from the schema/specification until a later time. 
+
 The Group.parent property provides an optional reference to a hierarchical set of groups, where 
 the top of the Group hierarchy is specified by Group.parent == null or not present.  
+
+The notion of a recursive optional parent reference supports the creation of trees of Groups of arbitrary
+depth. Since Group.names are assumed to be unique withing a given mcp server (Group.name property above),
+the Group.parent reference implies a full parent<->child relationship...i.e. a given Group.parent reference
+implies a Group.child relationship.
 
 ```
 Example 1
@@ -125,8 +137,6 @@ Example 3
 	
 	Fully Qualified Names: topgroup, topgroup.group1, topgroup.group1.group2, topgroup.group1.group3
 ```
-
-The Group.parent property allows the creation and communication of trees of Groups.
 
 The recursive definition of Group.parent (of type Group)in combination with the has some important implications for
 runtime serialization to json for inclusion in the request/response protocol.  See [Rationale(#Rationale) below for design alternatives considered.

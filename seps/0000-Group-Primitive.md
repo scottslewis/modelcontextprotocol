@@ -93,12 +93,14 @@ of grouping/collections are very often associated with hierarchy (and namespaces
 file systems (directories) or class namespaces. An alternative approach could be to leave out the optional Group.parent property from the schema/specification until a later time. 
 
 The Group.parent property provides an optional reference to a hierarchical set of groups, where 
-the top of the Group hierarchy is specified by Group.parent == null or not present.  
+the top of the hierarchy is specified by Group.parent == null (or property not present).  
 
-The notion of a recursive optional parent reference supports the creation of trees of Groups of arbitrary
-depth. Since Group.names are assumed to be unique withing a given mcp server (Group.name property above),
+The recursive optional parent reference supports the creation of trees of Groups of arbitrary
+depth. 
+
+Since Group.names are to be unique within a given mcp server (Group.name property above),
 the Group.parent reference implies a full parent<->child relationship...i.e. a given Group.parent reference
-implies a Group.child relationship.
+implies a 1-1 Group.child relationship in the opposite (parent -> child) direction.
 
 ### Group Title, Description, and Meta Properties
 

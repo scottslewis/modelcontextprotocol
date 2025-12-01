@@ -226,4 +226,4 @@ malicious server exploitation.
 
 ## Reference Implementation
 
-Reference implementation (in Java) exists [here](https://github.com/scottslewis/mcp-java-sdk).  [Here](https://github.com/scottslewis/mcp-java-sdk/blob/groups/mcp-core/src/main/java/io/modelcontextprotocol/spec/McpSchema.java#L1348) is the Java + Jackson json serialization implementation of the Group type as specified above.
+Reference implementation (in Java) exists in [mcp-java-sdk](https://github.com/scottslewis/mcp-java-sdk).  [Here](https://github.com/scottslewis/mcp-java-sdk/blob/groups/mcp-core/src/main/java/io/modelcontextprotocol/spec/McpSchema.java#L1348) is the Java + Jackson json  implementation of the McpSchema.Group type along the sdk impl of all the primitive types inner classes of the McpSchema class.

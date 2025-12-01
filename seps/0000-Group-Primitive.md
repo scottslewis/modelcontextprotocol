@@ -26,6 +26,10 @@ be dynamically created on an MCP server and then efficiently communicated to MCP
 A Group primitive in the mcp schema+protocol would allow mcp server and client designers to communicate collections of other mcp entities, and be able to communicate
 those structures and group/set/category-level meta-data (e.g. description, title) to clients without having to use custom types/schema/json for each specific use-case or design situation.
 
+### Use Cases
+
+Placeholder for a use cases summary from the use cases discussion #1772 and primitive-grouping-wg working group summaries.
+
 ## Specification
 
 ###Json Schema for Group Primitive
@@ -56,8 +60,11 @@ those structures and group/set/category-level meta-data (e.g. description, title
     "type": "object"
 }
 ```
-The json 'description' for each property for clarity.  [Here is the complete addition 
+The json schema description for each property has been omitted above for clarity.  [Here is the complete addition 
 to the current draft/schema.json](https://github.com/scottslewis/modelcontextprotocol/blob/groups/schema/draft/schema.json#L3618)
+
+### Group Properties
+
 
 | Property Name			| Type			| Required		|Notes								|
 |:---------------------:|:-------------:|:-------------:|:---------------------------------:|
@@ -92,6 +99,12 @@ The notion of a recursive optional parent reference supports the creation of tre
 depth. Since Group.names are assumed to be unique withing a given mcp server (Group.name property above),
 the Group.parent reference implies a full parent<->child relationship...i.e. a given Group.parent reference
 implies a Group.child relationship.
+
+### Remaining Group Properties
+
+The description, title, and _meta properties have exactly the same purpose and definition as the 
+existing TPRs.
+
 
 ```
 Example 1

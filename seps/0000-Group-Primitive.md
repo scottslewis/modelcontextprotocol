@@ -154,7 +154,7 @@ Example 3
 The recursive definition of Group.parent (of type Group)in combination with the has some important implications for
 runtime serialization to json for inclusion in the request/response protocol.  See [Rationale(#Rationale) below for design alternatives considered.
 
-### Associating Primitives with Groups
+### Associating Tools, Prompts, and Resources with Groups
 
 There are multiple ways to associating Group instances with Tools, Resources, and Prompts (and
 other MCP entities). See [Rationale(#Rationale) below for design alternatives.
@@ -186,24 +186,25 @@ A Tool.groups property allows a given Tool to be added to any number (list) of G
 
 Similar optional 'groups' properties can be [added to Prompt definition](https://github.com/scottslewis/modelcontextprotocol/blob/groups/schema/draft/schema.json#L3743) and [Resource definition](https://github.com/scottslewis/modelcontextprotocol/blob/groups/schema/draft/schema.json#L3743).
 
+NOTE: The addition of an optional
 
 ## Rationale
 
 ### Group.name
 
-Insert/summarize discussion from [here](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1567#discussioncomment-15078444)
+Placeholder for summarized version of technical discussion from [here](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1567#discussioncomment-15078444)
 
 ### Group.parent
 
-Insert/summarize discussion from [here](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1567#discussioncomment-15091079)
+Placeholder for summarized version of technical discussion  from [here](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1567#discussioncomment-15091079)
 
 ### Serialization of Groups/trees
 
-Insert/summarize discussion from [here](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1567#discussioncomment-15078444)
+Placeholder for summarized version of technical discussion  from [here](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1567#discussioncomment-15078444)
 
 ### Associating Primitives with Groups
 
-Insert/summarize discussion from [here](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1567#discussioncomment-15091079)
+Placeholder for summarized version of technical discussion  from [here](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1567#discussioncomment-15091079)
 
 ## Backward Compatibility
 

@@ -32,7 +32,7 @@ Placeholder for a use cases summary from the use cases discussion #1772 and prim
 
 ## Specification
 
-###Json Schema for Group Primitive
+###Schema for Group Primitive
 
 ```json
 "Group": {
@@ -60,7 +60,7 @@ Placeholder for a use cases summary from the use cases discussion #1772 and prim
     "type": "object"
 }
 ```
-The json schema description for each property has been omitted above for clarity.  [Here is the complete addition 
+The schema description for each property has been omitted above for clarity.  [Here is the complete addition 
 to the current draft/schema.json](https://github.com/scottslewis/modelcontextprotocol/blob/groups/schema/draft/schema.json#L3618)
 
 ### Group Properties
@@ -100,11 +100,15 @@ depth. Since Group.names are assumed to be unique withing a given mcp server (Gr
 the Group.parent reference implies a full parent<->child relationship...i.e. a given Group.parent reference
 implies a Group.child relationship.
 
-### Remaining Group Properties
+### Group Title, Description, and Meta Properties
 
-The description, title, and _meta properties have exactly the same purpose and definition as the 
-existing TPRs.
+The Group description, title, and _meta properties have exactly the same purpose and definition as the same
+named properties as the Tool, Prompt, and Resource definitions.
 
+### Example Hierarchical Groups
+
+Assuming the presence of Group.parent property in the schema, here are some simple example serialized-to-json Group instances to show how hierarchies of Groups can be easily represented and optionally used
+for fully qualified naming of primitives that are contained within each group.
 
 ```
 Example 1

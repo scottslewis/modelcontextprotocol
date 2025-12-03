@@ -63,8 +63,8 @@ The schema description for each property has been omitted above for clarity. [He
 
 | Property Name| Type| Required|Notes|
 | --- | --- | --- | --- |
-| name					| string		| yes			| See Group.name section below|
-| parent				| Group			| no			| See Group.parent section below|
+| name					| string		| yes			| See Group.name Property below|
+| parent				| Group			| no			| See Group.parent Property below|
 | description      		| string		| no			| Same as for TPRs|
 | title					| string		| no			| Optional human-readable name of the group for display purposes|
 | _meta					| object		|no				|Same as for other TPRs

@@ -13,7 +13,7 @@ The original MCP core primitives are Tools, Prompts, and Resources (TPRs). These
 
 The MCP protocol does not currently provide for multiple TPRs to be organized into collections or **groups**. 
 
-Collections of mcp entities have both server-side use cases (e.g. gateways for directing client access to primitives from multiple mcp servers, server-side organization for scaling, categories of primitives for abstraction, static and dynamic workflows with groupings of relevant TPRs, user-or-role-specific grouping of TPRs, etc}, and client-side use (e.g.grouping for model reasoning, choice, sequencing or orchestration; primitive discovery, organization, search and filtering, and presentation in UI or developer tooling, etc).
+Collections of MCP entities have both server-side use cases (e.g. gateways for directing client access to primitives from multiple MCP servers, server-side organization for scaling, categories of primitives for abstraction, static and dynamic workflows with groupings of relevant TPRs, user-or-role-specific grouping of TPRs, etc}, and client-side use (e.g.grouping for model reasoning, choice, sequencing or orchestration; primitive discovery, organization, search and filtering, and presentation in UI or developer tooling, etc).
 
 This proposal introduces a Group as a first class primitive in the schema, to allow Groups
 and their associated primitives to be created on an MCP server and then efficiently communicated to MCP clients.

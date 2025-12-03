@@ -24,7 +24,7 @@ A Group primitive in the MCP schema+protocol would allow mcp server and client d
 
 ### Use Cases
 
-Placeholder for a use cases summary from the use cases discussion #1772 and primitive-grouping-wg working group summaries.
+Placeholder for a use cases summary from the community [use cases discussion](https://github.com/modelcontextprotocol/modelcontextprotocol/discussions/1772) and primitive-grouping-wg working group summaries.
 
 ## Specification
 

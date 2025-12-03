@@ -28,7 +28,7 @@ Placeholder for a use cases summary from the use cases discussion #1772 and prim
 
 ## Specification
 
-### Group Primitive Json Schema
+### Json Schema
 
 ```json
 "Group": {
@@ -72,26 +72,27 @@ The schema description for each property has been omitted above for clarity. [He
 
 ### Group.name Property
 
-The Group.name property is assumed to have the same syntax and uniqueness requirements
- as specified by the [Tool.name property](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#tool-names). Group.name is the only required property in the Group schema definition.
- 
-As Groups are intended to represent collections of primitives, the presence of the Group.parent property (see below), and the resulting hierarchy of Groups makes it possible for TPRGs be guaranteed unique via a 'fully-qualified' name (i.e. the Group hierarchy names combined via some separator with the TPR name). See the examples under Group.parent property below for examples.
+Group.name is the only required property in the Group schema definition.
 
-Note: This allows (but does not require) the usage of pre-existing namespaces as Group.names.  Whether to associate Group instances in the protocol with namespace is a 
-design decision for the MCP server/TPR developer.
+The Group.name property will be assumed to have the same syntax and uniqueness requirements
+ as specified by the [Tool.name property](https://modelcontextprotocol.io/specification/2025-11-25/server/tools#tool-names). 
+ 
+As Groups are intended to represent collections of primitives, the presence of the Group.parent property (see below), and the resulting hierarchy of Groups makes it possible for TPRGs be guaranteed unique via a 'fully-qualified' name (i.e. the Group hierarchy names combined via some separator with the TPR name). See  under Group.parent property below for examples.
+
+Note: This allows (but does not require) the usage of namespaces as Group.names.  Whether to associate Group instances in the protocol with namespace (or to use Groups at all) is a design choice for the MCP server developer.
  
 ### Group.parent Property
 
 The Group.parent property provides an optional reference to a hierarchical set of groups, where the top of the hierarchy is specified by Group.parent == null (or property not present).  
 
-The recursive optional parent reference supports the creation of trees of Groups of arbitrary depth. 
+The recursive optional parent reference supports the creation of hierarchies of Groups of arbitrary depth. 
 
 Since Group.names are to be unique within a given mcp server (Group.name property above),
 the Group.parent reference implies a full parent<->child relationship...i.e. a given Group.parent reference
-implies a 1-1 Group.child relationship in the opposite (parent -> child) direction.
+establishes a 1-1 Group.child relationship in the opposite (parent -> child) direction.
 
-NOTE: The Group.parent property could be eliminated from this proposal. It was included here because the notion of grouping/collections are very often associated with hierarchy (and namespaces)...e.g. file systems (directories) or object-oriented class namespaces. Supporting (via the Group.parent property) a hierarchical organization of Groups seems 
-a reasonable addition to this proposal from the outset.
+NOTE: The Group.parent property could be eliminated from this proposal. It was included here because the notion of grouping/collections are very often associated with hierarchy (and namespaces)...e.g. file systems (directories) or object-oriented class namespaces. Given the ubiquity and utility of hierarchical
+structures, the Group.parent property seems to be a reasonable addition to this proposal.
 
 An alternative approach could be to omit the Group.parent property in this proposal, and introduce the optional Group.parent property in a future/later proposal.
 
@@ -148,9 +149,10 @@ Example 3
 	Fully Qualified Names: topgroup, topgroup.group1, topgroup.group1.group2, topgroup.group1.group3
 ```
 
-The recursive definition of Group.parent, in combination with the has some important implications for runtime serialization to json.  See Serialization of Hierarchical Groups below for design alternatives considered.
+The recursive definition of Group.parent, in combination with the has some important implications for runtime serialization to and from json.  See Serialization of Hierarchical Groups below for exploration of
+these issues.
 
-### Associating Tools, Prompts, and Resources into Groups
+### Collecting Tools, Prompts, and Resources into Groups
 
 There are multiple ways to associating Group instances with Tools, Resources, and Prompts (and
 other MCP entities). See [Rationale(#Rationale) below for design alternatives.
@@ -235,6 +237,18 @@ There is
 also an open source multi-language implementation of this strategy called [JavaScript Object Graph](https://github.com/jsog/jsog).  
 
 Given these implementations, it will be straightforward to introduce a language-interoperable approach for each compliant MCP sdk that efficiently serializes/deserializes the object graph of Group instances.
+
+### Design Alternatives for Collecting Tools, Prompts, and Resources into Groups
+
+As per the section above, one way to collect TPRs into groups is by adding a list of groups (optional property named 'groups' to Tool, Prompt, Resource and other types) that
+each TPR is in/contained by.  
+
+Another alternative considered would b to add a new standard property to the _meta property for TPRs (e.g. 'x-mcp-groups'. The value would assumed to be of type list<Group>.  An advantage of such a use of _meta is that it would not require any schema change for the existing TPRs (i.e. no need for TPR.groups property).
+
+Such a use of _meta has disadvantages, however. One is that the typing information in the schema for the 
+groups property (type list of Groups) is lost and so typing would have to be enforced by each sdk 
+implementation rather than being by specification. Not having typing information for Groups could be
+a security attack vector also.
 
 ## Backward Compatibility
 

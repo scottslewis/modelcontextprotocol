@@ -18,15 +18,15 @@ Collections of MCP entities have both server-side use cases (e.g. gateways for d
 This proposal introduces a Group as a first class primitive in the schema, to allow Groups
 and their associated primitives to be created on an MCP server and then communicated to MCP clients.
 
-NOTE: This proposal focuses on non-hierarchical groupings…i.e. simple collections of TPRs with no group hierarchy or namespaces.  
+NOTE: This version of the proposal focuses on non-hierarchical groupings, simple collections of TPRs with no group hierarchy.  
 
 Future enhancements likely will be needed for 
 
 Group hierarchy and namespaces 
 
-Serialization efficiency
+Json serialization efficiency
 
-Client-side filtering and presentation/organization
+Filtering and search for Groups
 
 Server Dynamics and Group Updates
 

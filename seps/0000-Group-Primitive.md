@@ -23,17 +23,22 @@ NOTE: This proposal focuses on non-hierarchical groupings…i.e. simple collecti
 Future enhancements likely will be needed for 
 
 Group hierarchy and namespaces 
+
 Serialization efficiency
+
 Client-side filtering and presentation/organization
+
 Server Dynamics and Group Updates
+
 Additional request/responses (e.g. listGroups)
+
 Other enhancements required by the community
 
 ## Motivation
 
 A Group primitive in the MCP schema+protocol would allow mcp server and client designers to communicate collections of MCP entities, and be able to communicate those structures and group/set/category-level meta-data (e.g. description, title) to clients without having to use custom types for each specific use-case or design situation that calls for collections/grouping.  
 
-To address a variety of collection use cases without multiple duplicate protocol enhancements, it makes sense to introduce a single Group primitive that is able to provide collections for all the other primitives (e.g. collection of tools) or combined (a single group that includes tools, resources, and prompt).
+To address a variety of collection use cases without multiple duplicate protocol enhancements, it makes sense to introduce a single Group primitive that is able to provide collections for all the other primitives (e.g. collection of tools) or combined (a single group that includes tools, resources, and prompts).
 
 Another advantage of having groups as a new primitive is that it allows the MCP server developer to provide descriptions of Groups for processing by models.  For example, a Group could be defined on an MCP server that has multiple tools, prompts, and resources that are relevant to a specific workflow, and provide a description for the group, in addition to any/all of the descriptions created for TPRs.  The Group.description can provide information about the collection of TPRs (e.g. a workflow), along with the descriptions of each of the TPRs.
 

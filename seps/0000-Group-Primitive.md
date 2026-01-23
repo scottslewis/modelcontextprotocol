@@ -83,7 +83,6 @@ Placeholder for a use cases summary from the community [use cases discussion](ht
        "$ref": "#/$defs/Icon"
      },
      "type": "array"
-   }
  },
  "required": [
    "name"

@@ -77,13 +77,14 @@ Placeholder for a use cases summary from the community [use cases discussion](ht
      "$ref": "#/$defs/Annotation",
      "description": "Optional additional group information.\n\nDisplay name precedence order is: title, annotations.title, then name."
    },
-  “icons": {
+   “icons": {
      "description": "Optional set of icons that can display in a user interface. See similar usage by Tools, Resources, Prompt",
      "items": {
        "$ref": "#/$defs/Icon"
      },
      "type": "array"
- },
+   }
+ }
  "required": [
    "name"
  ],

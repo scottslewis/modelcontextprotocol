@@ -84,7 +84,7 @@ Placeholder for a use cases summary from the community [use cases discussion](ht
      },
      "type": "array"
    }
- }
+ },
  "required": [
    "name"
  ],
